@@ -1,0 +1,25 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "castirongrill:block/cast_iron_grill_firepit"
+      }
+    },
+    {
+      "when": {
+        "lit": true
+      },
+      "apply": {
+        "model": "tfc:block/firepit_lit"
+      }
+    },
+    {
+      "when": {
+        "lit": false
+      },
+      "apply": {
+        "model": "tfc:block/firepit_unlit"
+      }
+    }
+  ]
+}

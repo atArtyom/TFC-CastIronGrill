@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.hermitowo.castirongrill.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "castirongrill.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
