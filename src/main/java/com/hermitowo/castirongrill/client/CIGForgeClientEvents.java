@@ -75,11 +75,10 @@ public class CIGForgeClientEvents
                 stack.scale(1.01F, 1.01F, 1.01F);
 
                 final PoseStack.Pose pose = stack.last();
-                float alpha = 0.33F;
 
                 Arrays.stream(ClientHelpers.DIRECTIONS_AND_NULL)
                     .flatMap(dir -> model.getQuads(state, dir, level.random, EmptyModelData.INSTANCE).stream())
-                    .forEach(quad -> consumer.putBulkData(pose, quad, 1.0F, 1.0F, 1.0F, alpha, LevelRenderer.getLightColor(level, state, pos), OverlayTexture.NO_OVERLAY));
+                    .forEach(quad -> consumer.putBulkData(pose, quad, 1.0F, 1.0F, 1.0F, 0.33F, LevelRenderer.getLightColor(level, state, pos), OverlayTexture.NO_OVERLAY));
 
                 ((MultiBufferSource.BufferSource) buffer).endBatch(RenderType.translucent());
                 ForgeHooksClient.setRenderType(null);
