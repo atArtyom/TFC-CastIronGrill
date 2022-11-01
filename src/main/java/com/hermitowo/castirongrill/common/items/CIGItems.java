@@ -15,7 +15,7 @@ public class CIGItems
 {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
-    public static final RegistryObject<Item> CAST_IRON_GRILL = ITEMS.register("cast_iron_grill", () -> new Item(new Item.Properties().tab(MISC)));
+    public static final RegistryObject<Item> CAST_IRON_GRILL = ITEMS.register("cast_iron_grill", () -> new CastIronGrillItem(new Item.Properties().tab(MISC)));
 
     public static final RegistryObject<Item> CAST_IRON_GRILL_FIREPIT = fromBlock(CIGBlocks.CAST_IRON_GRILL_FIREPIT);
 

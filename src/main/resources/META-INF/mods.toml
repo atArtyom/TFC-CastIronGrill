@@ -37,11 +37,11 @@ description = '''
 Cast iron grill addon for TFC.
 '''
 [[dependencies.castirongrill]]
-modId="tfc"
-mandatory=true
-versionRange="[0,)"
-ordering="AFTER"
-side="BOTH"
+modId = "tfc"
+mandatory = true
+versionRange = "[0,)"
+ordering = "AFTER"
+side = "BOTH"
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.castirongrill]] #optional
 # the modid of the dependency

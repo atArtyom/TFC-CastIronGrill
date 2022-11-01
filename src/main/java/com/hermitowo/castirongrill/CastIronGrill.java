@@ -1,6 +1,7 @@
 package com.hermitowo.castirongrill;
 
 import com.hermitowo.castirongrill.client.CIGClientEvents;
+import com.hermitowo.castirongrill.client.CIGForgeClientEvents;
 import com.hermitowo.castirongrill.common.blockentities.CIGBlockEntities;
 import com.hermitowo.castirongrill.common.blocks.CIGBlocks;
 import com.hermitowo.castirongrill.common.container.CIGContainerTypes;
@@ -28,7 +29,6 @@ public class CastIronGrill
         bus.addListener(this::setup);
 
         CIGBlocks.BLOCKS.register(bus);
-        CIGBlocks.COMPACT.register(bus);
         CIGItems.ITEMS.register(bus);
         CIGBlockEntities.BLOCK_ENTITIES.register(bus);
         CIGContainerTypes.CONTAINERS.register(bus);
@@ -40,10 +40,11 @@ public class CastIronGrill
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
             CIGClientEvents.init();
+            CIGForgeClientEvents.init();
         }
     }
 
-    private void setup(final FMLCommonSetupEvent event)
+    private void setup(FMLCommonSetupEvent event)
     {
     }
 }

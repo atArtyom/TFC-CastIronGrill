@@ -20,9 +20,7 @@ public class CIGBlockEntities
     private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(String name, BlockEntityType.BlockEntitySupplier<T> factory, Supplier<? extends Block> block)
     {
         return RegistrationHelpers.register(BLOCK_ENTITIES, name, factory, block);
-    }
-
-    public static final RegistryObject<BlockEntityType<CastIronGrillBlockEntity>> CAST_IRON_GRILL_BLOCKENTITY = register("cast_iron_grill", CastIronGrillBlockEntity::new, CIGBlocks.CAST_IRON_GRILL_FIREPIT);
+    }    public static final RegistryObject<BlockEntityType<CastIronGrillBlockEntity>> CAST_IRON_GRILL_BLOCKENTITY = register("cast_iron_grill", CastIronGrillBlockEntity::new, CIGBlocks.CAST_IRON_GRILL_FIREPIT);
 
 
 }

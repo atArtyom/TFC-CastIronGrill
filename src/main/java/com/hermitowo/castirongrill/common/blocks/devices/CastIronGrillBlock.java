@@ -26,12 +26,13 @@ import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blockentities.AbstractFirepitBlockEntity;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.TFCBlocks;
+import net.dries007.tfc.common.blocks.devices.FirepitBlock;
 import net.dries007.tfc.common.capabilities.Capabilities;
 import net.dries007.tfc.util.Helpers;
 
 import static com.hermitowo.castirongrill.common.blockentities.CastIronGrillBlockEntity.*;
 
-public class CastIronGrillBlock extends FirepitBlockCompat
+public class CastIronGrillBlock extends FirepitBlock
 {
     private static final VoxelShape GRILL_SHAPE = Shapes.or(BASE_SHAPE, box(2, 9.5, 3, 14, 10, 13), box(2, 0, 13, 3, 11, 14), box(13, 0, 13, 14, 11, 14), box(2, 0, 2, 3, 11, 3), box(13, 0, 2, 14, 11, 3));
 
@@ -62,18 +63,6 @@ public class CastIronGrillBlock extends FirepitBlockCompat
                 }
             });
         }
-    }
-
-    @Override
-    public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context)
-    {
-        return GRILL_SHAPE;
-    }
-
-    @Override
-    protected double getParticleHeightOffset()
-    {
-        return 0.8D;
     }
 
     @Override
@@ -115,5 +104,17 @@ public class CastIronGrillBlock extends FirepitBlockCompat
             }
         }
         return InteractionResult.PASS;
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context)
+    {
+        return GRILL_SHAPE;
+    }
+
+    @Override
+    protected double getParticleHeightOffset()
+    {
+        return 0.8D;
     }
 }
