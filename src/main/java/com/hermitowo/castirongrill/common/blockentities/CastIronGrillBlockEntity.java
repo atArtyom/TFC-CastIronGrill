@@ -20,7 +20,6 @@ import net.dries007.tfc.common.capabilities.heat.HeatCapability;
 import net.dries007.tfc.common.recipes.HeatingRecipe;
 import net.dries007.tfc.common.recipes.inventory.ItemStackInventory;
 import net.dries007.tfc.config.TFCConfig;
-import net.dries007.tfc.util.Fuel;
 import net.dries007.tfc.util.Helpers;
 
 import static com.hermitowo.castirongrill.CastIronGrill.*;
@@ -63,11 +62,11 @@ public class CastIronGrillBlockEntity extends AbstractFirepitBlockEntity<ItemSta
     @Override
     public boolean isItemValid(int slot, ItemStack stack)
     {
-        if (slot == SLOT_FUEL_INPUT)
+        if (slot >= SLOT_EXTRA_INPUT_START && slot <= SLOT_EXTRA_INPUT_END)
         {
-            return Fuel.get(stack) != null;
+            return stack.getCapability(HeatCapability.CAPABILITY).isPresent();
         }
-        return slot >= SLOT_EXTRA_INPUT_START && slot <= SLOT_EXTRA_INPUT_END;
+        return super.isItemValid(slot, stack);
     }
 
     @Override
