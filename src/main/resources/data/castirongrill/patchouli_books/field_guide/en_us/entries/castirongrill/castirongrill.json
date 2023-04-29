@@ -1,0 +1,32 @@
+{
+  "name": "Cast Iron Grill",
+  "category": "castirongrill:castirongrill",
+  "icon": "castirongrill:cast_iron_grill",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(thing)Cast Iron Grill$() is the cast iron version of $(l:tfc:mechanics/grill)Wrought Iron Grill$().$(br2)Their only difference is that a $(thing)Cast Iron Grill$() can only cook $(item)two$() items at once instead of five."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "multiblock": {
+        "pattern": [
+          [
+            "X"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "mapping": {
+          "X": "castirongrill:cast_iron_grill_firepit"
+        }
+      },
+      "name": "Cast Iron Grill",
+      "text": "",
+      "enable_visualize": false
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 1
+ }
