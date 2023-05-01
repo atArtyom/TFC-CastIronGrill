@@ -28,7 +28,7 @@ public class ForgeEventHandler
         BlockState state = event.getState();
         Block block = state.getBlock();
 
-        if (block == CIGBlocks.CAST_IRON_GRILL_FIREPIT.get())
+        if (block == CIGBlocks.CAST_IRON_GRILL_FIREPIT.get() && event.isStrong())
         {
             final BlockEntity entity = level.getBlockEntity(pos);
             if (entity instanceof AbstractFirepitBlockEntity<?> firepit && firepit.light(state))
