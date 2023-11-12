@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[40,)"
+loaderVersion = "[47,)"
 issueTrackerURL = "https://github.com/HermitOwO/TFC-CastIronGrill/issues"
 license = "MIT"
 
