@@ -1,6 +1,8 @@
 package com.hermitowo.castirongrill.common.blockentities;
 
+import com.hermitowo.castirongrill.CastIronGrill;
 import com.hermitowo.castirongrill.common.container.CastIronGrillContainer;
+import javax.annotation.ParametersAreNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -22,14 +24,13 @@ import net.dries007.tfc.common.recipes.inventory.ItemStackInventory;
 import net.dries007.tfc.config.TFCConfig;
 import net.dries007.tfc.util.Helpers;
 
-import static com.hermitowo.castirongrill.CastIronGrill.*;
-
+@ParametersAreNonnullByDefault
 public class CastIronGrillBlockEntity extends AbstractFirepitBlockEntity<ItemStackHandler>
 {
     public static final int SLOT_EXTRA_INPUT_START = 4;
     public static final int SLOT_EXTRA_INPUT_END = 5;
 
-    private static final Component NAME = Helpers.translatable(MOD_ID + ".block_entity.castirongrill");
+    private static final Component NAME = Component.translatable(CastIronGrill.MOD_ID + ".block_entity.castirongrill");
 
     private final HeatingRecipe[] cachedRecipes;
 
@@ -41,7 +42,9 @@ public class CastIronGrillBlockEntity extends AbstractFirepitBlockEntity<ItemSta
 
         if (TFCConfig.SERVER.firePitEnableAutomation.get())
         {
-            sidedInventory.on(new PartialItemHandler(inventory).insert(SLOT_FUEL_INPUT).extract(4, 5), Direction.Plane.HORIZONTAL).on(new PartialItemHandler(inventory).insert(4, 5), Direction.UP);
+            sidedInventory
+                .on(new PartialItemHandler(inventory).insert(SLOT_FUEL_INPUT).extract(4, 5), Direction.Plane.HORIZONTAL)
+                .on(new PartialItemHandler(inventory).insert(4, 5), Direction.UP);
         }
     }
 
@@ -72,6 +75,7 @@ public class CastIronGrillBlockEntity extends AbstractFirepitBlockEntity<ItemSta
     @Override
     protected void handleCooking()
     {
+        assert level != null;
         for (int slot = SLOT_EXTRA_INPUT_START; slot <= SLOT_EXTRA_INPUT_END; slot++)
         {
             final ItemStack inputStack = inventory.getStackInSlot(slot);
@@ -82,7 +86,7 @@ public class CastIronGrillBlockEntity extends AbstractFirepitBlockEntity<ItemSta
                 HeatingRecipe recipe = cachedRecipes[finalSlot - SLOT_EXTRA_INPUT_START];
                 if (recipe != null && recipe.isValidTemperature(cap.getTemperature()))
                 {
-                    ItemStack output = recipe.assemble(new ItemStackInventory(inputStack));
+                    ItemStack output = recipe.assemble(new ItemStackInventory(inputStack), level.registryAccess());
                     FoodCapability.applyTrait(output, FoodTraits.WOOD_GRILLED);
                     inventory.setStackInSlot(finalSlot, output);
                     markForSync();

@@ -12,13 +12,13 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.dries007.tfc.common.blockentities.AbstractFirepitBlockEntity;
 import net.dries007.tfc.util.events.StartFireEvent;
 
-public class ForgeEventHandler
+public class CIGForgeEvents
 {
     public static void init()
     {
         final IEventBus bus = MinecraftForge.EVENT_BUS;
 
-        bus.addListener(ForgeEventHandler::onFireStart);
+        bus.addListener(CIGForgeEvents::onFireStart);
     }
 
     public static void onFireStart(StartFireEvent event)

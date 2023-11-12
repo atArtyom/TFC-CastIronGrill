@@ -1,6 +1,6 @@
 {
   "name": "Cast Iron Grill",
-  "category": "castirongrill:castirongrill",
+  "category": "tfc:castirongrill",
   "icon": "castirongrill:cast_iron_grill",
   "pages": [
     {
@@ -28,5 +28,9 @@
     }
   ],
   "read_by_default": true,
-  "sortnum": 1
- }
+  "sortnum": 1,
+  "extra_recipe_mappings": {
+    "castirongrill:cast_iron_grill": 0,
+    "castirongrill:cast_iron_grill_firepit": 0
+  }
+}

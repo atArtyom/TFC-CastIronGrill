@@ -1,12 +1,12 @@
 {
   "parent": "block/block",
   "textures": {
-    "grill": "tfc:block/metal/full/cast_iron",
-    "particle": "tfc:block/metal/full/cast_iron"
+    "grill": "tfc:block/metal/smooth/cast_iron",
+    "particle": "tfc:block/metal/smooth/cast_iron"
   },
   "elements": [
     {
-      "from": [2, 1, 13],
+      "from": [2, 0, 13],
       "to": [3, 11, 14],
       "faces": {
         "north": {"uv": [0, 0, 0.75, 10], "texture": "#grill"},
@@ -30,7 +30,7 @@
       }
     },
     {
-      "from": [2, 1.5, 2],
+      "from": [2, 0, 2],
       "to": [3, 11, 3],
       "faces": {
         "north": {"uv": [0, 0, 0.75, 10], "texture": "#grill"},
