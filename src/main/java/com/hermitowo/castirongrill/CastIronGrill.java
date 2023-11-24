@@ -1,6 +1,7 @@
 package com.hermitowo.castirongrill;
 
 import com.hermitowo.castirongrill.client.CIGClientEvents;
+import com.hermitowo.castirongrill.common.CIGCreativeTabs;
 import com.hermitowo.castirongrill.common.blockentities.CIGBlockEntities;
 import com.hermitowo.castirongrill.common.blocks.CIGBlocks;
 import com.hermitowo.castirongrill.common.container.CIGContainerTypes;
@@ -28,12 +29,11 @@ public class CastIronGrill
     {
         final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        bus.addListener(EventPriority.LOWEST, CastIronGrill::fillTab);
-
         CIGBlocks.BLOCKS.register(bus);
         CIGItems.ITEMS.register(bus);
         CIGBlockEntities.BLOCK_ENTITIES.register(bus);
         CIGContainerTypes.CONTAINERS.register(bus);
+        CIGCreativeTabs.CREATIVE_TABS.register(bus);
 
         CIGForgeEvents.init();
 
@@ -41,14 +41,5 @@ public class CastIronGrill
         {
             CIGClientEvents.init();
         }
-    }
-
-    private static void fillTab(BuildCreativeModeTabContentsEvent event)
-    {
-        CreativeModeTab tab = event.getTab();
-        if (tab == TFCCreativeTabs.METAL.tab().get() || tab == TFCCreativeTabs.MISC.tab().get())
-            event.accept(CIGItems.CAST_IRON_GRILL);
-        if (tab == TFCCreativeTabs.DECORATIONS.tab().get())
-            event.accept(CIGItems.CAST_IRON_GRILL_FIREPIT);
     }
 }
