@@ -6,8 +6,6 @@ import com.hermitowo.castirongrill.common.blockentities.CastIronGrillBlockEntity
 import com.hermitowo.castirongrill.common.blocks.CIGBlocks;
 import com.hermitowo.castirongrill.common.items.CIGItems;
 import com.mojang.blaze3d.vertex.PoseStack;
-import javax.annotation.ParametersAreNonnullByDefault;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -42,8 +40,6 @@ import net.dries007.tfc.util.Helpers;
 
 import static com.hermitowo.castirongrill.common.blockentities.CastIronGrillBlockEntity.*;
 
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class CastIronGrillBlock extends FirepitBlock implements IHighlightHandler
 {
     public static int getSlotForSelection(BlockHitResult result)

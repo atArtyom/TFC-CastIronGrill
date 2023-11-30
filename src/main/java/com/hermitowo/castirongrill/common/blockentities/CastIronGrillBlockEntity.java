@@ -2,7 +2,6 @@ package com.hermitowo.castirongrill.common.blockentities;
 
 import com.hermitowo.castirongrill.CastIronGrill;
 import com.hermitowo.castirongrill.common.container.CastIronGrillContainer;
-import javax.annotation.ParametersAreNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -24,19 +23,18 @@ import net.dries007.tfc.common.recipes.inventory.ItemStackInventory;
 import net.dries007.tfc.config.TFCConfig;
 import net.dries007.tfc.util.Helpers;
 
-@ParametersAreNonnullByDefault
 public class CastIronGrillBlockEntity extends AbstractFirepitBlockEntity<ItemStackHandler>
 {
     public static final int SLOT_EXTRA_INPUT_START = 4;
     public static final int SLOT_EXTRA_INPUT_END = 5;
 
-    private static final Component NAME = Component.translatable(CastIronGrill.MOD_ID + ".block_entity.castirongrill");
+    private static final Component NAME = Component.translatable(CastIronGrill.MOD_ID + ".block_entity.cast_iron_grill");
 
     private final HeatingRecipe[] cachedRecipes;
 
     public CastIronGrillBlockEntity(BlockPos pos, BlockState state)
     {
-        super(CIGBlockEntities.CAST_IRON_GRILL_BLOCKENTITY.get(), pos, state, defaultInventory(6), NAME);
+        super(CIGBlockEntities.CAST_IRON_GRILL.get(), pos, state, defaultInventory(6), NAME);
 
         cachedRecipes = new HeatingRecipe[2];
 

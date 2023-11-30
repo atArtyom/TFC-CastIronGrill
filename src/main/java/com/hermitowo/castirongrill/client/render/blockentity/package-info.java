@@ -1,0 +1,4 @@
+@ParametersAreNonnullByDefault
+package com.hermitowo.castirongrill.client.render.blockentity;
+
+import javax.annotation.ParametersAreNonnullByDefault;

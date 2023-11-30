@@ -22,7 +22,7 @@ public class CIGBlocks
 {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CastIronGrill.MOD_ID);
 
-    public static final RegistryObject<Block> CAST_IRON_GRILL_FIREPIT = BLOCKS.register("cast_iron_grill_firepit", () -> new CastIronGrillBlock(ExtendedProperties.of(MapColor.DIRT).strength(0.4F, 0.4F).sound(SoundType.NETHER_WART).randomTicks().noOcclusion().lightLevel(litBlockEmission(15)).blockEntity(CIGBlockEntities.CAST_IRON_GRILL_BLOCKENTITY).pathType(BlockPathTypes.DAMAGE_FIRE).<AbstractFirepitBlockEntity<?>>ticks(AbstractFirepitBlockEntity::serverTick, AbstractFirepitBlockEntity::clientTick)));
+    public static final RegistryObject<Block> CAST_IRON_GRILL_FIREPIT = BLOCKS.register("cast_iron_grill_firepit", () -> new CastIronGrillBlock(ExtendedProperties.of(MapColor.DIRT).strength(0.4F, 0.4F).sound(SoundType.NETHER_WART).randomTicks().noOcclusion().lightLevel(litBlockEmission(15)).blockEntity(CIGBlockEntities.CAST_IRON_GRILL).pathType(BlockPathTypes.DAMAGE_FIRE).<AbstractFirepitBlockEntity<?>>ticks(AbstractFirepitBlockEntity::serverTick, AbstractFirepitBlockEntity::clientTick)));
 
     private static ToIntFunction<BlockState> litBlockEmission(int lightValue)
     {

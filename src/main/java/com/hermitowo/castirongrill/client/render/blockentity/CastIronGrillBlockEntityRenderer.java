@@ -4,7 +4,6 @@ import com.hermitowo.castirongrill.common.blockentities.CastIronGrillBlockEntity
 import com.hermitowo.castirongrill.common.blocks.devices.CastIronGrillBlock;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import javax.annotation.ParametersAreNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -16,7 +15,6 @@ import net.dries007.tfc.common.capabilities.Capabilities;
 
 import static com.hermitowo.castirongrill.common.blockentities.CastIronGrillBlockEntity.*;
 
-@ParametersAreNonnullByDefault
 public class CastIronGrillBlockEntityRenderer extends FirepitBlockEntityRenderer<CastIronGrillBlockEntity>
 {
     @Override

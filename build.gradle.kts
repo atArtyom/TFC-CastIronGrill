@@ -10,8 +10,8 @@ val minecraftVersion: String = "1.20.1"
 val forgeVersion: String = "47.1.3"
 val parchmentVersion: String = "2023.09.03-1.20.1"
 val mixinVersion: String = "0.8.5"
-val tfcVersion: String = "4845122"
-val firmalifeVersion: String = ""
+val tfcVersion: String = "4895012"
+val firmalifeVersion: String = "4918556"
 val jeiVersion: String = "15.2.0.27"
 val patchouliVersion: String = "1.20.1-81-FORGE"
 val jadeVersion: String = "4614153"
@@ -55,7 +55,7 @@ dependencies {
     implementation(fg.deobf("curse.maven:tfc-302973:$tfcVersion"))
 
     // Firmalife
-    //implementation(fg.deobf("curse.maven:firmalife-453394:$firmalifeVersion"))
+    implementation(fg.deobf("curse.maven:firmalife-453394:$firmalifeVersion"))
 
     // JEI
     compileOnly(fg.deobf("mezz.jei:jei-$minecraftVersion-forge-api:$jeiVersion"))

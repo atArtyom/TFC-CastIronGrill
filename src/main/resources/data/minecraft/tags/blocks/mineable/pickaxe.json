@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "castirongrill:cast_iron_grill_firepit"
+    "castirongrill:cast_iron_grill_firepit",
+    {
+      "id": "castirongrill:stovetop_cast_iron_grill",
+      "required": false
+    }
   ]
 }

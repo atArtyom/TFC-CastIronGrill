@@ -1,7 +1,6 @@
 package com.hermitowo.castirongrill.common.container;
 
 import com.hermitowo.castirongrill.common.blockentities.CastIronGrillBlockEntity;
-import javax.annotation.Nonnull;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
@@ -28,7 +27,7 @@ public class CastIronGrillContainer extends BlockEntityContainer<CastIronGrillBl
     }
 
     @Override
-    protected boolean moveStack(@Nonnull ItemStack stack, int slotIndex)
+    protected boolean moveStack(ItemStack stack, int slotIndex)
     {
         return switch (typeOf(slotIndex))
         {

@@ -19,11 +19,10 @@ public class CIGContainerTypes
 {
     public static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, CastIronGrill.MOD_ID);
 
-    public static final RegistryObject<MenuType<CastIronGrillContainer>> CAST_IRON_GRILL = CIGContainerTypes.<CastIronGrillBlockEntity, CastIronGrillContainer>registerBlock("cast_iron_grill", CIGBlockEntities.CAST_IRON_GRILL_BLOCKENTITY, CastIronGrillContainer::create);
+    public static final RegistryObject<MenuType<CastIronGrillContainer>> CAST_IRON_GRILL = CIGContainerTypes.<CastIronGrillBlockEntity, CastIronGrillContainer>registerBlock("cast_iron_grill", CIGBlockEntities.CAST_IRON_GRILL, CastIronGrillContainer::create);
 
-    private static <T extends InventoryBlockEntity<?>, C extends BlockEntityContainer<T>> RegistryObject<MenuType<C>> registerBlock(String name, Supplier<BlockEntityType<T>> type, BlockEntityContainer.Factory<T, C> factory)
+    public static <T extends InventoryBlockEntity<?>, C extends BlockEntityContainer<T>> RegistryObject<MenuType<C>> registerBlock(String name, Supplier<BlockEntityType<T>> type, BlockEntityContainer.Factory<T, C> factory)
     {
         return RegistrationHelpers.registerBlockEntityContainer(CONTAINERS, name, type, factory);
     }
 }
-

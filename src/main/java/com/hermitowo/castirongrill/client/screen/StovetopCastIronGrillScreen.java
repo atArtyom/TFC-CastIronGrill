@@ -1,8 +1,8 @@
 package com.hermitowo.castirongrill.client.screen;
 
 import com.hermitowo.castirongrill.CastIronGrill;
-import com.hermitowo.castirongrill.common.blockentities.CastIronGrillBlockEntity;
-import com.hermitowo.castirongrill.common.container.CastIronGrillContainer;
+import com.hermitowo.castirongrill.common.blockentities.StovetopCastIronGrillBlockEntity;
+import com.hermitowo.castirongrill.common.container.StovetopCastIronGrillContainer;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -13,11 +13,11 @@ import net.dries007.tfc.client.screen.BlockEntityScreen;
 import net.dries007.tfc.common.capabilities.heat.Heat;
 import net.dries007.tfc.config.TFCConfig;
 
-public class CastIronGrillScreen extends BlockEntityScreen<CastIronGrillBlockEntity, CastIronGrillContainer>
+public class StovetopCastIronGrillScreen extends BlockEntityScreen<StovetopCastIronGrillBlockEntity, StovetopCastIronGrillContainer>
 {
-    private static final ResourceLocation BACKGROUND = CastIronGrill.rl("textures/gui/cast_iron_grill_firepit.png");
+    private static final ResourceLocation BACKGROUND = CastIronGrill.rl("textures/gui/stovetop_cast_iron_grill.png");
 
-    public CastIronGrillScreen(CastIronGrillContainer container, Inventory playerInventory, Component name)
+    public StovetopCastIronGrillScreen(StovetopCastIronGrillContainer container, Inventory playerInventory, Component name)
     {
         super(container, playerInventory, name, BACKGROUND);
         inventoryLabelY += 20;
