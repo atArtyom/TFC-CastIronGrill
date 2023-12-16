@@ -3,6 +3,7 @@ package com.hermitowo.castirongrill.common.blocks.devices;
 import java.util.Map;
 import java.util.stream.Collectors;
 import com.hermitowo.castirongrill.common.blockentities.StovetopCastIronGrillBlockEntity;
+import com.hermitowo.castirongrill.common.items.CIGItems;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.core.BlockPos;
@@ -18,10 +19,12 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -134,6 +137,12 @@ public class StovetopCastIronGrillBlock extends BottomSupportedDeviceBlock imple
             TFCDamageSources.grill(entity, 1.0F);
         }
         super.entityInside(state, level, pos, entity);
+    }
+
+    @Override
+    public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos, Player player)
+    {
+        return new ItemStack(CIGItems.CAST_IRON_GRILL.get());
     }
 
     @Override
