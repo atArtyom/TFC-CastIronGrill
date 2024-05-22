@@ -1,6 +1,7 @@
 package com.hermitowo.castirongrill;
 
 import com.hermitowo.castirongrill.client.CIGClientEvents;
+import com.hermitowo.castirongrill.client.CIGClientForgeEvents;
 import com.hermitowo.castirongrill.common.CIGCreativeTabs;
 import com.hermitowo.castirongrill.common.CIGInteractionManager;
 import com.hermitowo.castirongrill.common.blockentities.CIGBlockEntities;
@@ -49,6 +50,7 @@ public class CastIronGrill
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
             CIGClientEvents.init();
+            CIGClientForgeEvents.init();
         }
     }
 

@@ -3,12 +3,10 @@ package com.hermitowo.castirongrill.common.blocks.devices;
 import java.util.Map;
 import java.util.stream.Collectors;
 import com.hermitowo.castirongrill.common.blockentities.CastIronGrillBlockEntity;
-import com.hermitowo.castirongrill.common.blocks.CIGBlocks;
 import com.hermitowo.castirongrill.common.items.CIGItems;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -26,7 +24,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.items.ItemHandlerHelper;
-import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.client.IHighlightHandler;
 import net.dries007.tfc.client.TFCSounds;
@@ -166,19 +163,8 @@ public class CastIronGrillBlock extends FirepitBlock implements IHighlightHandle
     }
 
     @Override
-    protected double getParticleHeightOffset()
+    public double getParticleHeightOffset()
     {
         return 0.8D;
-    }
-
-    @Nullable
-    @Override
-    public BlockState getStateToDraw(Level level, Player player, BlockState lookState, Direction direction, BlockPos pos, double x, double y, double z, ItemStack item)
-    {
-        if (Helpers.isItem(item, CIGItems.CAST_IRON_GRILL.get()))
-        {
-            return CIGBlocks.CAST_IRON_GRILL_FIREPIT.get().defaultBlockState().setValue(LIT, lookState.getValue(LIT));
-        }
-        return super.getStateToDraw(level, player, lookState, direction, pos, x, y, z, item);
     }
 }
